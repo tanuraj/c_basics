@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main(){
+	int c, count=0;
+	while((c= getchar()) != EOF){
+		if(count == 1){
+
+			putchar('\n');
+			putchar(c);
+		}else{
+			count =1;
+			putchar(c);
+		}
+
+	}
+	getch();
+	clrscr();
+}

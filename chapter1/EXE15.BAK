@@ -1,0 +1,13 @@
+#include <stdio.h>
+float calcCelsius(float f);
+void main()
+{      	float fahr, celsius;
+	celsius = calcCelsius(0);
+	printf("Celsius: %d",celsius);
+	getch();
+	clrscr();
+}
+float calcCelsius(float fahr){
+  float celsius = (5.0/9.0) * (fahr - 32.0);
+  return celsius;
+}

@@ -1,0 +1,7 @@
+#include<stdio.h>
+void main(){
+	int A;
+	printf("value: %d\n",A);
+	getch();
+	clrscr();
+}

@@ -1,0 +1,26 @@
+																																																#include <stdio.h>
+#define  TAB 8
+void main() {
+    int c,i,space;
+    i = 1;
+
+    while ((c = getchar()) != EOF) {
+	if (c == '\t') {
+		space = TAB -(i%TAB);
+		while (space > 0) {
+			putchar('#');
+			i++;
+			--space;
+		}
+	}else{
+		putchar(c);
+		++i;
+	}
+	if(c == '\n'){
+		i = 0;
+	}
+
+  }
+  getch();
+  clrscr();
+}
