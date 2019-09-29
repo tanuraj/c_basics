@@ -3,7 +3,6 @@
 
 void printline(int pos);
 int newlinepos(int pos);
-int checkblank(int pos);
 char line[LIMIT];
 
 void main(){
@@ -13,8 +12,7 @@ void main(){
 		 if(c == '\n'){
 			printline(pos);
 			pos = 0;
-		 }else if( ++pos >= LIMIT ){
-                  pos = checkblank(pos);
+		 }else{
 			printline(pos);
 			pos = newlinepos(pos);
 		 }
@@ -31,6 +29,8 @@ void printline(int pos){
 	if(pos >0){
 		putchar('\n');
 	}
+	getch();
+	clrscr();
 }
 int newlinepos(int pos){
 	int i, j;
@@ -38,20 +38,10 @@ int newlinepos(int pos){
 		return 0;
 	}else{
 		i =0;
-		for( j= pos ; j< LIMIT; ++j){
-			++i;
+		for( j= pos ; j< LIMIT; j++){
+			i++;
 			line[i] = line[j];
 		}
 		return i;
 	}
-}
-
-int checkblank(int pos){
-       if( pos > 0)
-        while( line[pos] != ' ')
-            --pos;
-       if(pos == 0)
-        return LIMIT;
-       else
-        return pos + 1;
 }
